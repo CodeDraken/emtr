@@ -1,6 +1,11 @@
 // an event emitter
 function Emitter() {
+  // observer list
   this.events = {};
+  // looks like:
+  // {
+  //  greet: [function, function, function]
+  // }
 }
 
 Emitter.prototype.on = function(type, listener) {
@@ -19,6 +24,7 @@ Emitter.prototype.emit = function(type) {
 // app
 var emtr = new Emitter();
 
+// observers
 emtr.on('greet', function() {
    console.log('Welcome!');
  });
